@@ -32,7 +32,7 @@ body {
 
 .calculator-container {
     max-width: 400px; /*to adjust the width when the browser window becomes smaller*/
-    background-color:yellow;
+    background-color:white;
     padding: 1rem; /*1rem = 16px ;  how much space around elements' content*/
     margin: 2rem auto; /*auto=> the browser calculates the margin*/
     border: 1px solid black; /*border of calculator: width - style - color*/
