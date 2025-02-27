@@ -43,6 +43,8 @@ body {
 }
 
 .boton{
+    background-color:forestgreen;
+    color:white;
     height: 50px;
     width: 60px; /*if you want to discard the change go back to 80px*/
     font-size: 24px;
@@ -55,6 +57,7 @@ body {
     font-size: 24px;
     text-align: center;
 }
+
 
 /*Display area styling*/
 .calculator-display {
