@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!isNaN(event.key)) { // If a number is pressed
             processInput(event.key);
-        } else if (keyMap[event.key]) { // If an operator or special key is pressed
+        } 
+        else if (keyMap[event.key]) { // If an operator or special key is pressed
             processInput(keyMap[event.key]);
         }
     }
