@@ -42,9 +42,16 @@ body {
     box-shadow: 10px 10px black;
 }
 
-.boton, .clear-btn, .delete-btn{
+.boton{
     height: 50px;
     width: 60px; /*if you want to discard the change go back to 80px*/
+    font-size: 24px;
+    text-align: center;
+}
+
+.clear-btn, .delete-btn {
+    height: 50px;
+    width: 120px;
     font-size: 24px;
     text-align: center;
 }
