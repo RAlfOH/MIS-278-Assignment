@@ -125,6 +125,14 @@ body {
 }
 
 /*concerning the clear button*/
+.calculator-buttons button[data-value="clear"]{
+    background-color: green;
+    color:black;
+}
+.calculator-buttons button[data-value="clear"]:hover{
+    background-color: darkgreen;
+    color:white;
+}
 .clear-btn {
     grid-column:  span 2; /*so that the the clear botton fills the half of the row*/
     font-weight: bold; /*the font of the clear button will be bold*/
@@ -133,7 +141,15 @@ body {
     color: blue; /*text-color of the clear button will be changed once clicked*/
 }
 
-/* Delete Button */
+/* Concerning the Delete Button */
+.calculator-buttons button[data-value="delete"]{
+    background-color:red;
+    color:black;
+}
+.calculator-buttons button[data-value="delete"]:hover{
+    background-color: darkred;
+    color:white;
+}
 .delete-btn {
     grid-column: span 2; /* Makes it same width as the Clear button */
     background-color: darkorange;
