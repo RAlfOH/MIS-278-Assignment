@@ -103,12 +103,12 @@ body {
 
 /*For the equal sign*/
 .calculator-buttons button[data-value="="]{
-    background-color: orange;
+    background-color:orangered;
     color:black;
 }
 .calculator-buttons button[data-value="="]:hover{
-    background-color: orangered;
-    color:white;
+    background-color:tomato;
+    color:black;
 }
 
 /* Button Styles */
