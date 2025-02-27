@@ -116,14 +116,26 @@ body {
 
 /*concerning the clear button*/
 .clear-btn {
-    grid-column:  span 4; /*so that the the clear botton fills the whole row*/
+    grid-column:  span 2; /*so that the the clear botton fills the half of the row*/
     font-weight: bold; /*the font of the clear button will be bold*/
 }
 .clear-btn:hover {
     color: blue; /*text-color of the clear button will be changed once clicked*/
 }
 
-/* Responsive Design for Tablets and Smaller Screens */
+/* Delete Button */
+.delete-btn {
+    grid-column: span 2; /* Makes it same width as the Clear button */
+    background-color: darkorange;
+    color: white;
+    font-weight: bold;
+}
+
+.delete-btn:hover {
+    background-color: orangered;
+}
+
+/* Responsive Design for Tablets and Smartphones */
 @media (max-width: 600px) {
     .calculator-container {
         width: 90%;
