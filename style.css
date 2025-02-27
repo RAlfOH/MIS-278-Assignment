@@ -1,5 +1,5 @@
 header {
-    border: 10px dotted red;
+    border: 10px dotted blue;
     border-radius: 8px;
     text-align: center;
     background-color:lime;
@@ -44,7 +44,7 @@ body {
 
 .boton, .clear-btn{
     height: 50px;
-    width: 80px;
+    width: 60px; /*if you want to discard the change go back to 80px*/
     font-size: 24px;
     text-align: center;
 }
