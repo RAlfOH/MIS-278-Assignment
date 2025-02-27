@@ -1,0 +1,136 @@
+header {
+    border: 10px dotted blue;
+    border-radius: 8px;
+    text-align: center;
+    background-color:lime;
+    color:darkred;
+    font-style: italic;
+}
+
+p {
+    font-size: 25px;
+    color:purple;
+}
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*so that width of elements will not go outside of the screen*/
+    font-family: Arial, sans-serif; /*I specified the font type just like ms word*/
+}
+
+/*Display shows how an element is shown on a webpage*/
+body {
+    background-image: url(https://s26378.pcdn.co/wp-content/uploads/math_is_hard.jpg);
+    background-size: 95%;
+    height:100vh;
+    display: flex; /*Displays an element as a block-level flex container*/
+    justify-content: center; /*where the elements will be placed in the webpage*/
+    align-items: center; 
+    padding-top: 80px; /* Adjust based on header height */
+}
+
+.calculator-container {
+    max-width: 400px; /*to adjust the width when the browser window becomes smaller*/
+    background-color:orange;
+    padding: 1rem; /*1rem = 16px ;  how much space around elements' content*/
+    margin: 2rem auto; /*auto=> the browser calculates the margin*/
+    border: 1px solid black; /*border of calculator: width - style - color*/
+    border-radius: 8px; /*so that the border will be rounded; roundest is 12px*/
+    position: relative; /*the element is positioned relative to its normal position*/
+    transition: background-color 3s ease-in-out; /*css property + duration*/
+    box-shadow: 10px 10px black;
+}
+
+.boton, .clear-btn{
+    height: 50px;
+    width: 80px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/*Display area styling*/
+.calculator-display {
+    height: 3rem;
+    background-color:black;
+    color:white;
+    width: 100%;
+    margin-bottom: 1rem; /*Space between the display and the 1st row of the bottoms*/
+    font-size: 2rem; /*how large is the number on the display*/
+    text-align: right; /*the number will appear to the right of the display*/
+    padding: 0.8rem;
+    border-radius: 5px; /*rounded border*/
+    overflow: hidden; /*the overflow is clipped, and the rest of the content is hidden*/
+    font-family: 'Times New Roman', Times, serif;
+    text-overflow: ellipsis;/*showing that the overflowed content can be randered...*/
+}
+
+/* Grid layout for buttons */
+.calculator-buttons {
+    display: grid; /*Displays an element as a block-level grid container*/
+    grid-template-columns: repeat(4, 1fr); /*each row will have 4 buttons by
+    following the sequence of buttons specified in the HTML code*/
+    gap: 8px; /*to specify the gap between the rows and the columns*/
+}
+
+
+/* Operator Buttons */
+.calculator-buttons button[data-value="+"], /*Selecting operator buttons using comma*/
+.calculator-buttons button[data-value="-"], /*combinator*/
+.calculator-buttons button[data-value="*"],
+.calculator-buttons button[data-value="/"] {
+    background-color:aqua;
+    color:black;
+}
+
+.calculator-buttons button[data-value="+"]:hover,
+.calculator-buttons button[data-value="-"]:hover,
+.calculator-buttons button[data-value="*"]:hover,
+.calculator-buttons button[data-value="/"]:hover { /*what the color will be once clicked*/
+    background-color:forestgreen;
+    color:red;
+}
+
+/* Button Styles */
+.calculator-buttons button {
+    padding: 1.2rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #444;
+    color: white;
+    cursor:pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.1s;
+}
+
+/* Button Hover Effect */
+.calculator-buttons button:hover {
+    background-color: #666;
+}
+
+/* Button Active (Pressing) Effect */
+.calculator-buttons button:active {
+    transform: scale(0.80); /*how much the button will shrink when clicked on it*/
+}
+
+/*concerning the clear button*/
+.clear-btn {
+    grid-column:  span 4; /*so that the the clear botton fills the whole row*/
+    font-weight: bold; /*the font of the clear button will be bold*/
+}
+.clear-btn:hover {
+    color: blue; /*text-color of the clear button will be changed once clicked*/
+}
+
+/* Responsive Design for Tablets and Smaller Screens */
+@media (max-width: 600px) {
+    .calculator-container {
+        width: 90%;
+    }
+
+    .calculator-buttons button {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+}

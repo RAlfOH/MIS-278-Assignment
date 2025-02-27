@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web-Based Calculator</title>
+        <link rel="stylesheet" href="style.css">
+        </head>
+    <body>
+        <!--Note: Sometimes there would be need to press on the buttons more than once
+        in order to execute any operatior or to input any number-->
+    <main class="calculator-container">
+        <header>
+            <h1>Welcome to our WEB page!</h1>
+            <p>This website supplies to our users a calculator that helps them in their
+                everyday operations and computations!
+            </p>
+        </header>
+        <br>
+        
+    <!-- Calculator Display -->
+    <section id="display" class="calculator-display">0</section>
+
+    <!-- Calculator Buttons -->
+    <section class="calculator-buttons">
+    <!-- TODO: Add calculator buttons with appropriate data attributes
+    for identification -->
+    <!-- Example button structure: -->
+        <!--This is for the first row of the calculator under the display-->
+        <!--We used the button tag and specified the number or the operator in the
+        data value attribute-->
+        <button type="button" data-value="7" class="boton">7</button> 
+        <button type="button" data-value="8" class="boton">8</button>
+        <button type="button" data-value="9" class="boton">9</button>
+        <!--For example, we put / inside data-value so that the code makes the division
+        but with ÷ it will not work-->
+        <button type="button" data-value="/" class="boton">÷</button>
+
+        <!--This is for the second row of the calculator under the first row-->
+        <button type="button" data-value="4" class="boton">4</button> 
+        <button type="button" data-value="5" class="boton">5</button>
+        <button type="button" data-value="6" class="boton">6</button>
+        <button type="button" data-value="*" class="boton">×</button>
+
+        <!--This is for the third row of the calculator under the second row-->
+        <button type="button" data-value="1" class="boton">1</button> 
+        <button type="button" data-value="2" class="boton">2</button>
+        <button type="button" data-value="3" class="boton">3</button>
+        <button type="button" data-value="-" class="boton">-</button>
+
+        <!--This is for the fourth row of the calculator under the third row-->
+        <button type="button" data-value="0" class="boton">0</button> 
+        <button type="button" data-value="." class="boton">.</button>
+        <button type="button" data-value="=" class="boton" >=</button>
+        <button type="button" data-value="+" class="boton">+</button>
+
+        <!--Clear value will have a separate row-->
+        <button type="button" class = "clear-btn" data-value="clear">Clear</button>
+
+    <!-- Repeat for digits, operators, equals, and clear -->
+    </section>
+    </main>
+    <script src="script.js"></script>
+    </body>
+    </html>
