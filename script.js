@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.target.tagName.toLowerCase() !== 'button') return; // Ignore non-button clicks
         processInput(event.target.getAttribute('data-value')); // Process the button value
     }
-    
+
     function handleKeyPress(event) {
         const keyMap = {
             "Enter": "=",
@@ -29,19 +29,22 @@ document.addEventListener('DOMContentLoaded', () => {
             "-": "-",
             "+": "+",
             ".": ".",
+            "Backspace": "delete" // Enable Backspace key for deleting characters
         };
 
         if (!isNaN(event.key)) { // If a number is pressed
             processInput(event.key);
-        } 
-        else if (keyMap[event.key]) { // If an operator or special key is pressed
+        } else if (keyMap[event.key]) { // If an operator or special key is pressed
             processInput(keyMap[event.key]);
         }
     }
-    
+
     function processInput(value) {
         if (value === "clear") { // Clear the display when "C" is pressed
             clearDisplay();
+        } 
+        else if (value === "delete") { // Handle the delete function
+            deleteLastCharacter();
         } 
         else if (value === "=") { // Perform calculation when "=" is pressed
             computeResult();
@@ -50,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
             updateDisplay(value);
         }
     }
-    
     function updateDisplay(value) {
         // Prevent multiple decimal points in the same number
         if (value === "." && lastInput.includes(".")) return;
@@ -61,7 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // If starting a new calculation, replace "0" with the input
         if (display.textContent === "0" && value !== ".") {
             currentExpression = value;
-        } else {
+        } 
+        else {
             currentExpression += value; // Append input to the current expression
         }
 
@@ -90,15 +93,18 @@ document.addEventListener('DOMContentLoaded', () => {
             currentExpression = "0"; // Reset expression
         }
     }
-    
+
+    function deleteLastCharacter() {
+        currentExpression = currentExpression.slice(0, -1); // Remove last character
+        if (currentExpression === "") {
+            currentExpression = "0"; // Reset to zero if all characters are deleted
+        }
+        display.textContent = currentExpression;
+    }
     function clearDisplay() {
         display.textContent = "0"; // Reset display to 0
         currentExpression = ""; // Clear stored expression
         lastInput = ""; // Clear last input
     }
-
-    function toggleTheme() {
-        document.body.classList.toggle('light-mode'); // Toggle theme class
-        themeToggle.textContent = document.body.classList.contains('light-mode') ? "🌙" : "☀️"; // Change button icon
-    }
 });
+
