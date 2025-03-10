@@ -9,7 +9,7 @@ header {
 
 p {
     font-size: 25px;
-    color:purple;
+    color:black;
 }
 /* Reset Styles */
 * {
@@ -22,8 +22,8 @@ p {
 /*Display shows how an element is shown on a webpage*/
 body {
     background-image: url(https://s26378.pcdn.co/wp-content/uploads/math_is_hard.jpg);
-    background-size: 95%;
-    height:100vh;
+    background-size: cover;/* Ensures the image covers the entire viewport */
+    height:100vh;/* Ensures the body takes up the full viewport height */
     display: flex; /*Displays an element as a block-level flex container*/
     justify-content: center; /*where the elements will be placed in the webpage*/
     align-items: center; 
@@ -43,25 +43,25 @@ body {
 }
 
 .boton{
-    background-color:forestgreen;
-    color:white;
     height: 50px;
-    width: 60px; /*if you want to discard the change go back to 80px*/
+    width: 81px; /*if you want to discard the change go back to 80px*/
     font-size: 24px;
     text-align: center;
 }
 
 .clear-btn, .delete-btn {
     height: 50px;
-    width: 140px;
-    font-size: 24px;
+    width: 170px;
+    font-size: 27px;
     text-align: center;
 }
 
 
 /*Display area styling*/
 .calculator-display {
-    height: 3rem;
+    height: auto;/* Allows the display height to expand */
+    min-height: 3rem; /* Ensures it does not shrink too much */
+    max-height: 12rem;
     background-color:black;
     color:white;
     width: 100%;
@@ -70,9 +70,9 @@ body {
     text-align: right; /*the number will appear to the right of the display*/
     padding: 0.8rem;
     border-radius: 5px; /*rounded border*/
-    overflow: hidden; /*the overflow is clipped, and the rest of the content is hidden*/
+    overflow-wrap: break-word; /* Ensures long text wraps properly */
+    word-wrap: break-word;
     font-family: 'Times New Roman', Times, serif;
-    text-overflow: ellipsis;/*showing that the overflowed content can be randered...*/
 }
 
 /* Grid layout for buttons */
@@ -81,8 +81,11 @@ body {
     grid-template-columns: repeat(4, 1fr); /*each row will have 4 buttons by
     following the sequence of buttons specified in the HTML code*/
     gap: 8px; /*to specify the gap between the rows and the columns*/
-}
+    font-size:27px;
+    justify-content: center;
+    text-align: center;
 
+}
 
 /* Operator Buttons */
 .calculator-buttons button[data-value="+"], /*Selecting operator buttons using comma*/
@@ -114,13 +117,15 @@ body {
 /* Button Styles */
 .calculator-buttons button {
     padding: 1.2rem;
-    font-size: 1.5rem;
+    font-size: 30px;/*1.5rem;*/
     border: none;
     border-radius: 6px;
     background-color: #444;
     color: white;
     cursor:pointer;
     text-align: center;
+
+
     transition: background-color 0.3s ease, transform 0.1s;
 }
 
@@ -160,9 +165,10 @@ body {
     background-color: darkred;
     color:white;
 }
+
 .delete-btn {
     grid-column: span 2; /* Makes it same width as the Clear button */
-    background-color: darkorange;
+    background-color: orange;
     color: white;
     font-weight: bold;
 }
@@ -178,7 +184,7 @@ body {
     }
 
     .calculator-buttons button {
-        font-size: 1rem;
+        font-size: 25px;
         padding: 0.8rem;
     }
 }
